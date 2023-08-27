@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Community</title>
+    <title>Pricing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +32,7 @@
               <a href="#" class="nav-site-link">Features</a>
             </li>
             <li class="nav-site-item">
-              <a href="#" class="nav-site-link">Pricing</a>
+              <a href="./pricing.html" class="nav-site-link">Pricing</a>
             </li>
             <li class="nav-site-item">
               <a href="./community.html" class="nav-site-link">Community</a>
@@ -56,7 +56,18 @@
       </div>
     </header>
     <main>
-      <h1>Main Community</h1>
+      <form class="js-speaker-form">
+        <label for="name">Имя</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="tel">Телефон</label>
+        <input type="tel" name="tel" id="tel" />
+
+        <label for="email">Почта</label>
+        <input type="email" name="email" id="email" />
+
+        <button type="submit">Отправить</button>
+      </form>
     </main>
     <footer>
       <div class="container footer">
@@ -118,5 +129,21 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>

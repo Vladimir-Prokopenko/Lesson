@@ -34,7 +34,7 @@
               <a href="#" class="nav-site-link">Features</a>
             </li>
             <li class="nav-site-item">
-              <a href="#" class="nav-site-link">Pricing</a>
+              <a href="./pricing.html" class="nav-site-link">Pricing</a>
             </li>
             <li class="nav-site-item">
               <a href="./community.html" class="nav-site-link">Community</a>
@@ -316,5 +316,21 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
